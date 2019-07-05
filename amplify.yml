@@ -5,7 +5,8 @@ backend:
       commands:
         - '# Execute Amplify CLI with the helper script'
         - amplifyPush --simple
-        - yum install jq python36 python36-devel python36-pip -y
+        - yum install -y https://centos7.iuscommunity.org/ius-release.rpm
+        - yum install jq python36u python36u-devel python36u-pip -y
         - python3.6 -m pip install --upgrade pip
         - USER_BASE_PATH=$(python3.6 -m site --user-base)
         - export PATH=$PATH:$USER_BASE_PATH/bin

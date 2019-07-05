@@ -8,8 +8,11 @@ backend:
         - yum update -y
         - yum install -y yum-utils
         - yum groupinstall development -y
-        - yum install -y https://centos7.iuscommunity.org/ius-release.rpm
-        - yum install jq python36u python36u-devel python36u-pip -y
+        - '# yum install -y https://centos7.iuscommunity.org/ius-release.rpm
+        - yum install epel-release
+        - curl 'https://setup.ius.io/' -o setup-ius.sh
+        - sh setup-ius.sh
+        - yum --enablerepo=ius install jq python36u python36u-devel python36u-pip -y
         - python3.6 -m pip install --upgrade pip
         - USER_BASE_PATH=$(python3.6 -m site --user-base)
         - export PATH=$PATH:$USER_BASE_PATH/bin

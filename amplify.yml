@@ -5,9 +5,9 @@ backend:
       commands:
         - '# Execute Amplify CLI with the helper script'
         - amplifyPush --simple
-        - yum update
-        - yum install yum-utils
-        - yum groupinstall development
+        - yum update -y
+        - yum install -y yum-utils
+        - yum groupinstall development -y
         - sudo yum install -y https://centos7.iuscommunity.org/ius-release.rpm
         - yum install jq python36u python36u-devel python36u-pip -y
         - python3.6 -m pip install --upgrade pip
